@@ -6,6 +6,7 @@ Use let.
 
 ## arrays
 Arrays are can be used as dynamic lists.
+
 ```typescript
 let list: number[] = [1, 2, 3];
 let a = list[0];
@@ -19,7 +20,7 @@ This traditional function with promises:
 getTiersPromise(): Promise<Tier[]> {
   return this.http.get<Tier[]>(
     this.tierUrl + '/tiers').toPromise()
-    .then(function (tiers: Tier[]) { tiers.sort((a, b) => a.name < b.name ? -1 : (a.name > b.name ? 1 : 0)))
+    .then(function (tiers: Tier[]) { return tiers.sort((a, b) => a.name < b.name ? -1 : (a.name > b.name ? 1 : 0)))
     .catch(function(err) {
       return null;
     });
