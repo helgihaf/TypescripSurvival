@@ -9,6 +9,7 @@ Arrays are can be used as dynamic lists.
 ```typescript
 let list: number[] = [1, 2, 3];
 let a = list[0];
+list.push(7);
 let listCopy = list.slice();
 
 ## async / await
