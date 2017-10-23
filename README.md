@@ -38,3 +38,20 @@ async getTiers(): Promise<Tier[]> {
   };
 }
 ```
+
+## Consuming Web APIs (Angular 4 version)
+
+```typescript
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/operator/toPromise';
+
+//...
+
+async getStuff() : Promise<Stuff[]> {
+  let url = this.goCreateUrl();
+  return await this.http.get<Stuff[]>(url,
+      { headers: new HttpHeaders().set('apikey', 'asdf') }
+    ).toPromise();
+}
+```
+
